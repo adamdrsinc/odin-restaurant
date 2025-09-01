@@ -1,0 +1,5 @@
+const pageLoad = () => {
+    
+};
+
+export {pageLoad};

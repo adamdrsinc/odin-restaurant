@@ -7,12 +7,14 @@
 
 body{
     --background-color-all: beige;
+    --section-margin: 2vh 0;
+    --section-height: 30vh;
+
     background-color: var(--background-color-all);
     min-height: 100vh;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr 8fr;
 
     justify-items: center;
 }
@@ -23,11 +25,24 @@ header,
 }
 
 header{
-
     background-color: var(--background-color-all);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-height: 10vh;
+}
+
+#header-logo-container{
+    display: flex;
+    align-items: center;
+    max-height: 10vh;
+    padding: 1vh;
+    gap: 8px;
+}
+
+#header-logo-container img{
+    filter: invert(1);
+    max-height: 9vh;
 }
 
 nav{
@@ -38,6 +53,16 @@ nav{
 
 nav button{
     padding: 12px 42px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+nav button:hover{
+    color: gray;
 }
 
 #content{
@@ -45,7 +70,7 @@ nav button{
 }
 
 .section{
-    --section-height: 30vh;
+    margin: var(--section-margin);
     min-height: var(--section-height);
     padding: 1vh;
 
@@ -129,19 +154,25 @@ p + p{
 }
 
 .triple-column-grid{
+    margin: var(--section-margin);
+    min-height: var(--section-height);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: 1fr;
     grid-auto-rows: 1fr;
 
-    background-color: white;
-    border: 1px solid black;
+    gap: 20px;
 }
 
 .food-card{
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+        background-color: white;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 1vh;
 }
 
 .food-card h2{
@@ -162,6 +193,12 @@ p + p{
     font-size: 1.2rem;
     margin-top: 12px;
     border-radius: 12px;
+
+    cursor: pointer;
+}
+
+.food-card button:hover{
+    opacity: 0.8;
 }
 
 .food-card .price{
