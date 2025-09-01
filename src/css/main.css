@@ -1,3 +1,171 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 body{
-    background-color: lightblue;
+    --background-color-all: beige;
+    background-color: var(--background-color-all);
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 8fr;
+
+    justify-items: center;
+}
+
+header,
+#content{
+    width: min(90%, 1280px);
+}
+
+header{
+
+    background-color: var(--background-color-all);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+nav button{
+    padding: 12px 42px;
+}
+
+#content{
+    background-color: var(--background-color-all);
+}
+
+.section{
+    --section-height: 30vh;
+    min-height: var(--section-height);
+    padding: 1vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+}
+
+
+.left-column,
+.centre-column,
+.right-column{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    min-height: var(--section-height);
+}
+
+.section.first > .right-column{
+    align-items: center;
+}
+
+#intro-image{
+    max-height: var(--section-height);
+    height: 100%;
+    width: auto;
+    border-radius: 12px;
+}
+
+h1{
+    font-size: 2.9rem;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+h1 + p{
+    margin-top: 1.5vh;
+}
+
+p + p{
+    margin-top: 1vh;
+}
+
+#hero{
+    position: relative;
+    max-height: 40vh;
+    min-width: 100vw;
+}
+
+#hero img{
+    max-height: 100%;
+    width: 100%;
+}
+
+#hero-overlay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.808);
+    height: 40%;
+    top: 40%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#hero-overlay > h1{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#hero + #content{
+    padding-top: 2vh;
+}
+
+.triple-column-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
+
+    background-color: white;
+    border: 1px solid black;
+}
+
+.food-card{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.food-card h2{
+    font-size: 2rem;
+}
+
+.food-card img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.food-card button{
+    align-self: center;
+    justify-self: center;
+
+    padding: 6px 18px;
+    font-size: 1.2rem;
+    margin-top: 12px;
+    border-radius: 12px;
+}
+
+.food-card .price{
+    margin-top: 16px;
+    align-self: center;
+    font-size: 1.5rem;
 }
