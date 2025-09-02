@@ -31,4 +31,4 @@ import {loadAboutPage} from "./loadAboutPage.js";
 })();
 
 
-homePageLoad();
+loadHomePage();
