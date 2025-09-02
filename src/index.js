@@ -28,7 +28,6 @@ import {loadAboutPage} from "./loadAboutPage.js";
         loadAboutPage();
     });
 
-
 })();
 
 
