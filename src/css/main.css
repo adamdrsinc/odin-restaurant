@@ -206,3 +206,9 @@ p + p{
     align-self: center;
     font-size: 1.5rem;
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -1,6 +1,8 @@
-const pageLoad = () => {
+import pizzaImage from './img/pizza.jpg';
+
+
+const loadHomePage = () => {
     const divContent = document.getElementById("content");
-    console.log(divContent);
 
     const firstSection = document.createElement("div");
     firstSection.classList.add("section", "first");
@@ -27,7 +29,7 @@ const pageLoad = () => {
 
     const fsRightColumn = document.createElement("div");
     fsRightColumn.classList.add("right-column");
-    fsRightColumn.innerHTML = `<img id="intro-image" src="./img/pizza.jpg" alt="A picture of a margherita pizza with a sourdough crust on top of a wooden board.">`;
+    fsRightColumn.innerHTML = `<img id="intro-image" src="${pizzaImage}" alt="A picture of a margherita pizza with a sourdough crust on top of a wooden board.">`;
     
     firstSection.appendChild(fsLeftColumn);
     firstSection.appendChild(fsRightColumn);
@@ -47,7 +49,7 @@ const pageLoad = () => {
         foodCard.appendChild(fcH2);
 
         const fcImage = document.createElement("img");
-        fcImage.src = "./img/pizza.jpg";
+        fcImage.src = pizzaImage;
         foodCard.appendChild(fcImage);
 
         const fcPrice = document.createElement("p");
@@ -70,4 +72,5 @@ const pageLoad = () => {
     divContent.appendChild(tripleColumnGrid);
 };
 
-export {pageLoad};
+
+export {loadHomePage};
